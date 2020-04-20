@@ -7,6 +7,7 @@ const publicDir = path.join(__dirname, '../public')
 const viewPath = path.join(__dirname, '../templates/views')
 const partialPath = path.join(__dirname, '../templates/partials')
 const app = express()
+const port = process.env.PORT || 3000
 
 //set handlebar view engine and view path
 app.set('view engine', 'hbs')
@@ -45,7 +46,7 @@ app.get('*', (req, res) => {
     res.send('Page not found')
 })
 
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
     console.log(chalk.green.inverse('Server is up on port 3000'))
 })
 
